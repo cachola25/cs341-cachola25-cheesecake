@@ -1,11 +1,13 @@
 
+//Author: Jayven Cachola
 
-$(document).onready(function () {
+$(function () {
     // Hide order details
     $(".testing-js").hide();
     $(".display-order").hide();
 
-    $("#order-button").onclick(function () {
+    // Handles order button click events
+    orderButtonHandler = function (event) {
 
       // Check if notes contain vegan
       var notes = $("#notes").val();
@@ -32,26 +34,29 @@ $(document).onready(function () {
         // Make sure user selects a flavor
         alert("Please select a flavor.");
       }
+    }
 
-    });
-    
-    // add aditional features to dropdown menu
     var option = "Jan";
-    $("a.dropdown-option").onclick(function () {
+    // Handles dropdown click events
+    dropdownClickHandler = function (event) {
       option = $(this).text();
       $("#h3-button").text(option);
-    });
-    
-    document.getElementById("h3-button").onmouseover = function () {
+    }
+
+    // Handles dropdown hover events
+    dropdownHoverHandler = function (event) {
       $("#h3-button").text("Select Month");
     }
-    document.getElementById("h3-button").onmouseleave = function () {
+
+    // Handles dropdown leave events
+    dropdownLeaveHandler = function (event) {
       $("#h3-button").text(option);
     }
-    document.getElementById("dropdown-content").onmouseover = function () {
-      $("#h3-button").text("Select Month");
-    }
-    document.getElementById("dropdown-content").onmouseleave = function () {
-      $("#h3-button").text(option);
-    }
+    // Add event listener to order button and dropdown options
+    $("#order-button").on("click", orderButtonHandler);
+    $("a.dropdown-option").on("click", dropdownClickHandler);
+    $("#h3-button").on("mouseover", dropdownHoverHandler);
+    $("#h3-button").on("mouseleave", dropdownLeaveHandler);
+    $("#dropdown-content").on("mouseover", dropdownHoverHandler);
+    $("#dropdown-content").on("mouseleave", dropdownLeaveHandler);
   });
