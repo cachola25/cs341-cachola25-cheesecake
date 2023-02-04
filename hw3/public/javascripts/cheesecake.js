@@ -1,9 +1,12 @@
 
 
-$(document).ready(function () {
+$(document).onready(function () {
     // Hide order details
+    $(".testing-js").hide();
     $(".display-order").hide();
-    $("#order-button").click(function () {
+
+    $("#order-button").onclick(function () {
+
       // Check if notes contain vegan
       var notes = $("#notes").val();
       vegan = notes.toLowerCase();
@@ -14,6 +17,7 @@ $(document).ready(function () {
       // Check if topping is selected and get order details
       var toppingVal = $("input[name=topping]:checked").val();
       if (toppingVal != undefined) {
+
         //Hide order form and show order details
         $(".hide-on-click").hide();
         $(".display-order").show();
@@ -23,14 +27,17 @@ $(document).ready(function () {
         if (notes != "") {
           $("p#order-notes.display-order").text("Notes: " + notes);
         }
+
       } else {
         // Make sure user selects a flavor
         alert("Please select a flavor.");
       }
+
     });
+    
     // add aditional features to dropdown menu
     var option = "Jan";
-    $("a.dropdown-option").click(function () {
+    $("a.dropdown-option").onclick(function () {
       option = $(this).text();
       $("#h3-button").text(option);
     });
@@ -48,12 +55,3 @@ $(document).ready(function () {
       $("#h3-button").text(option);
     }
   });
-
-
-  function changeList() {
-    let cherry = Math.randm() * 100 + 1;
-    let plain = Math.randm() * 100 + 1;
-    let chocolate = Math.randm() * 100 + 1;
-    const list = document.querySelector("#orders-list");
-    list.innerHTML = "<li>"+cherry+" Cherry</li><li>"+plain+" Plain</li><li>" +chocolate+" Chocolate</li>";
-  }

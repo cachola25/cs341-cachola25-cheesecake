@@ -1,5 +1,3 @@
-34.127.81.127
-
 
 Task 1: 
 
@@ -7,6 +5,7 @@ gcloud sql connect cheesecakedb --user=root --quiet
 CREATE_DATABASE CHEESECAKE;
 
 Task 2: 
+
 USE CHEESECAKE
 
 Task 3:
