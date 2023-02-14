@@ -41,6 +41,23 @@ $(function () {
     dropdownClickHandler = function (event) {
       option = $(this).text();
       $("#h3-button").text(option);
+      $.ajax({
+        type: "POST",
+        url: "http://localhost:3000/orders",
+        contentType: "application/json",
+        data: JSON.stringify({ month: "January" }),
+        success: function(response) {
+          var orderList = $("#orders-list");
+          orderList.empty(); // Remove any existing list items
+          $.each(response, function(index, order) {
+            var orderItem = $("<li>").text(order.quantity + " " + order.topping);
+            orderList.append(orderItem); // Append the new list item to the list
+          });
+        },
+        error: function(xhr, status, error) {
+          console.log("Error: " + error);
+        }
+      });
     }
 
     // Handles dropdown hover events
@@ -59,4 +76,7 @@ $(function () {
     $("#h3-button").on("mouseleave", dropdownLeaveHandler);
     $("#dropdown-content").on("mouseover", dropdownHoverHandler);
     $("#dropdown-content").on("mouseleave", dropdownLeaveHandler);
+
+    
+    
   });
