@@ -72,13 +72,14 @@ li:nth-child(1) {
 }
 
 li:nth-child(2) {
-   color: brown;
-}
-
-li:nth-child(3) {
    color: #B58D21;
    filter: brightness(150%);
 }
+
+li:nth-child(3) {
+   color: brown;
+}
+
 
 #toppingnumber {
    font-family: Cursive;

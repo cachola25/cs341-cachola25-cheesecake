@@ -41,11 +41,11 @@ $(function () {
     dropdownClickHandler = function (event) {
       option = $(this).text();
       $("#h3-button").text(option);
+
+      //Update past order details to JSON object
       $.ajax({
         type: "POST",
         url: "http://localhost:3000/orders",
-        contentType: "application/json",
-        data: JSON.stringify({ month: "January" }),
         success: function(response) {
           var orderList = $("#orders-list");
           orderList.empty(); // Remove any existing list items
