@@ -46,12 +46,15 @@ $(function () {
       $.ajax({
         type: "POST",
         url: "http://localhost:3000/orders",
+        // Update list if post is successful
         success: function(response) {
           var orderList = $("#orders-list");
-          orderList.empty(); // Remove any existing list items
+          // Remove any existing list items
+          orderList.empty(); 
           $.each(response, function(index, order) {
             var orderItem = $("<li>").text(order.quantity + " " + order.topping);
-            orderList.append(orderItem); // Append the new list item to the list
+            // Append the new list item to the list
+            orderList.append(orderItem); 
           });
         },
         error: function(xhr, status, error) {

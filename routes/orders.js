@@ -1,9 +1,12 @@
+/*Author: Jayven Cachola*/
+
 
 var express = require('express');
 var router = express.Router();
 
-
+//Prof said it is okay to have get and post
 router.get('/', function (req, res, next) {
+    // Get orders from database
     const orders = [
         {topping: 'cherry', quantity: 2},
         {topping: 'plain', quantity: 6},
@@ -13,6 +16,7 @@ router.get('/', function (req, res, next) {
 });
 
 router.post('/', function (req, res, next) {
+    // Post orders from database
     const orders = [
         {topping: 'cherry', quantity: 2},
         {topping: 'plain', quantity: 6},
