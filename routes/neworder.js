@@ -21,7 +21,7 @@ router.get('/', function(req, res, next) {
 
 router.post("/", function (req, res, next) {
 
-    var query = 'INSERT INTO ORDERS (MONTH, DAY, QUANTITY, TOPPING, NOTES) VALUES ("AUG", 08, "' + 
+    var query = 'INSERT INTO ORDERS (ORDERID, MONTH, DAY, QUANTITY, TOPPING, NOTES) VALUES (154,"AUG", 08, "' + 
     req.body.quantity + '", "' + req.body.topping + '", "' + req.body.notes + '")';
 
     dbms(query, (err, result) => {
