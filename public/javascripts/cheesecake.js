@@ -43,6 +43,7 @@ $(function () {
       $("#h3-button").text(option);
 
       //Update past order details to JSON object
+      
       $.ajax({
         type: "POST",
         url: "http://localhost:3000/orders",
