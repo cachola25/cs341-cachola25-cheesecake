@@ -3,13 +3,16 @@
 var express = require("express");
 var router = express.Router();
 var dbms = require("./dbms").dbquery;
-var sql = require("mysql");
+
 const orders = [
   {topping: 'cherry', quantity: 2},
   {topping: 'plain', quantity: 6},
   {topping: 'chocolate', quantity: 3}
 ]
 
+router.get('/', function(req, res, next) {
+  res.send("Placeholder");
+});
 
 router.post("/Jan", function (req, res, next) {
 

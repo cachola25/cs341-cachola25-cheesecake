@@ -40,7 +40,7 @@
       <tr>
         <td>
           <!--Drop down menu options-->
-          <select name="toppingnumber" id="toppingnumber">
+          <select name="toppingnumber" id="toppingnumber" method="POST">
             <option value="1">1</option>
             <option value="2">2</option>
             <option value="3">3</option>
@@ -54,7 +54,7 @@
         <td></td>
         <td></td>
         <td></td>
-        <td class="options">
+        <td class="options" method="POST">
           <!--Flavor Options-->
           <label for="plain" class="buttons">
             <input type="radio" name="topping" id="plain" value="plain">
@@ -78,7 +78,7 @@
     <label for="notes" id="notes-text" class="hide-on-click">Notes:</label>
     <br>
     <textarea id="notes" name="notes" placeholder="Enter any special instructions." rows="4" cols="50" maxlength="200"
-      class="hide-on-click"></textarea>
+      class="hide-on-click" method="POST"></textarea>
   </form>
   <br>
   <button id="order-button" type="button" class="hide-on-click">Order</button>
