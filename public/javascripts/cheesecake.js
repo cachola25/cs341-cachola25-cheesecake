@@ -1,5 +1,14 @@
 //Author: Jayven Cachola
 
+/* NOTE: 
+    The HW#5 specifications do not work, I am submitting 
+    what I think would work for this specification
+    I kept getting this error: 
+    "Error: ER_NOT_SUPPORTED_AUTH_MODE: Client does not support authentication protocol requested by server; consider upgrading MySQL client"
+    I tried to fix it but I couldn't find a solution
+    I also tried to use the mysql2 package but I couldn't get it to work
+*/
+
 $(function () {
   // Hide order details
   $(".testing-js").hide();
@@ -83,6 +92,9 @@ $(function () {
         }
       };
 
+      // Handles dropdown click events
+      // if a dropdown is clicked, the text of the dropdown is set to the text of the button
+      // and POST request is sent to the server
       const h3Button = document.getElementById("h3-button");
       $("#Jan").on("click", function () {
         h3Button.textContent = "Jan";
